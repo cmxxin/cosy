@@ -1,0 +1,66 @@
+extends layout
+block links
+	link(rel="stylesheet", href="/libs/umeditor/themes/default/css/umeditor.css")
+block content
+	header
+		a.btn.goBack(href="javascript:;")
+			i.iconfont.icon-back
+		h1 #{h1}
+	article.new-article
+		if article._id
+			input.h-id(type="hidden", value="#{article._id}")
+			input.h-tit(type="hidden", value="#{article.title}")
+		#editor #{article.summary}
+		.digest
+			h2 封面
+				small 大图片建议尺寸：900像素 * 500像素
+			.files
+				a.uploadFile(href="javascript:;")
+					form#uploadImage(action="/admin/photo/new", method="POST", ENCTYPE="multipart/form-data")
+						input(type="file", name="newImgList")
+						| 本地上传
+				a.chooseFile(href="javascript:;") 从图片库选择
+			.tempImg
+				if article.poster
+					img(src="#{article.poster}", alt="")
+			h2 分类
+			.choose-cat
+				select#category(name="category")
+					each item in catList
+						if article.category && article.category.name == item.name
+							option(value="#{item._id}", selected="selected") #{item.name}
+						else
+							option(value="#{item._id}") #{item.name}
+			h2 摘要
+				small 选填，如果不填写会默认抓取正文
+			textarea(name="", rows="5")
+	aside.ctrl
+		a.save-btn.save-article(href="javascript:;") 保存
+		if !article.status
+			a.save-btn.save-and-publish(href="javascript:;") 保存并发布
+		else
+			a.cancle-publish(href="javascript:;") 撤销发布
+	.overlay
+	article.dialog
+		.thead
+			h4 选择图片
+		.tbody
+			ul
+				li
+			.page()
+				a.prev-page(href="javascript:;") 上一页
+				span 
+					b 1 
+					| / 
+					strong 1
+				a.next-page(href="javascript:;") 下一页
+		.tfoot.alignRight
+			a.btn.white.close-dialog(href="javascript:;") 取消
+			a.btn.green.btn-submit(href="javascript:;") 添加
+block scripts
+	script(src="/libs/jquery/dist/jquery.min.js")
+	script(src="/libs/jquery.form.js")
+	script(src="/libs/umeditor/umeditor.config.js")
+	script(src="/libs/umeditor/umeditor.js")
+	script(src="/libs/umeditor/lang/zh-cn/zh-cn.js")
+	script(src="/scripts/admin/edit.js")

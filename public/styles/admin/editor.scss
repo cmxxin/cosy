@@ -1,0 +1,35 @@
+.edui-container{ border: 0 none; box-shadow: none;
+	.edui-toolbar{ border-top: 1px solid #e7e7eb; border-bottom: 1px solid #e7e7eb; box-shadow: none; background: #fff; transition: all .2 ease-in}
+}
+
+.edui-toolbar{ 
+	.edui-btn-toolbar{ padding: 5px 0;}
+	.edui-separator{ height: 30px; background: none; border-right: 1px solid #e7e7eb; padding: 0; margin: 0 1px 0 2px;}
+	.edui-btn{
+		.edui-icon{ font-family:"iconfont" !important; font-size:16px; font-style:normal; -webkit-font-smoothing: antialiased; -webkit-text-stroke-width: 0.2px; -moz-osx-font-smoothing: grayscale; background: none; width: 30px; height: 30px; line-height: 30px; text-align: center;}
+		.edui-icon-source:before{content: "\e616"; font-size: 20px;}
+		.edui-icon-undo:before{ content:"\e60f"}
+		.edui-icon-redo:before{ content:"\e610"}
+		.edui-icon-bold:before{ content:"\e614"}
+		.edui-icon-italic:before{ content:"\e61a"}
+		.edui-icon-underline:before{ content:"\e621"}
+		.edui-icon-strikethrough:before{ content:"\e61e"}
+		.edui-icon-superscript:before{ content:"\e620"; font-size: 20px;}
+		.edui-icon-subscript:before{ content:"\e61f"; font-size: 20px;}
+		.edui-icon-forecolor:before{ content:"\e615"; font-size: 22px;}
+		.edui-icon-backcolor:before{ content:"\e624"; font-size: 22px;}
+		.edui-icon-insertorderedlist:before{ content:"\e61c"}
+		.edui-icon-insertunorderedlist:before{ content:"\e623"}
+		.edui-icon-justifyleft:before{ content:"\e612"}
+		.edui-icon-justifycenter:before{ content:"\e625"}
+		.edui-icon-justifyright:before{ content:"\e613"}
+		.edui-icon-link:before{ content:"\e61b"; font-size: 18px;}
+		.edui-icon-unlink:before{ content:"\e626"; font-size: 18px;}
+		.edui-icon-horizontal:before{ content:"\e619"}
+		.edui-icon-fullscreen:before{ content:"\e618"}
+	}
+}
+.edui-splitbutton .edui-caret{ width: 5px; background-position:-743px 4px; height: 30px;}
+.edui-btn-toolbar .edui-btn-name-fontsize.edui-combobox{border: 0 none; margin-top: 3px;}
+.edui-combobox .edui-button-label{ width: 20px; height: 24px;}
+.edui-combobox .edui-button-spacing{ display: none;}

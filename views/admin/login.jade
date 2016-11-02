@@ -1,0 +1,24 @@
+extends layout
+
+block content
+	article.login-box
+		h1 CosyHTML Admin
+		.login
+			ul
+				li
+					input(type="email", placeholder="Email", id="email")
+					span
+						i.iconfont.icon-user
+				li
+					input(type="password", placeholder="Password", id="password")
+					span
+						i.iconfont.icon-password
+			if type == 'Login'			
+				a(href="javascript:;", class="login-btn") 
+					b 登&nbsp;&nbsp;&nbsp;&nbsp;录
+			else
+				a(href="javascript:;", class='register-btn') 
+					b 注&nbsp;&nbsp;&nbsp;&nbsp;册
+block scripts
+	script(src='/scripts/admin/login.js')
+

@@ -1,0 +1,54 @@
+$green: #73d3b7;
+
+.m-detail{ background: #73d3b7; padding: 0 0 10px; 
+	&.main{ padding-bottom:0px;
+		h2{ color: #fff; padding: 0 10px; margin: 5px 0; font-weight: 700;}
+	}
+	aside{ background:#fff; 
+		a{ background: transparent !important; color: #f1642c !important; }
+		p{ margin: 0; padding: 0 10px;
+			&:last-child{ padding-top: 2px;}
+			span{ color: #54413a; margin-right: 10px; line-height: 20px;
+				i{ font-size: 12px; color: $green; margin-right: 2px; }
+				b{ font-weight: 400; background: #cecece; line-height: 16px; display: inline-block; padding: 0px 5px; border-radius: 5px; margin-right: 8px; position: relative;
+					a{color: #fff !important;}
+					&:after{ content: ','; color: #666; font-size: 14px; display: block; position: absolute; right: -5px; bottom: 0}
+					&:last-child:after{ content: ''}
+				}
+			}
+		}
+	}
+	.content{ background: #fff; padding: 5px 10px 15px; 
+		img{ max-width: 100%;}
+		pre{ margin: 0; white-space: pre-wrap; word-wrap: break-word; border: 1px solid #ccc; border-radius: 3px; background: #ebebeb; padding: 5px;}
+	}
+}
+.reply{ background: #fff; padding-bottom: 10px;
+	h4{ margin: 0; background: $green; line-height: 30px; text-align: center; color: #fff; font-weight: 700; font-size:1.25rem; text-shadow: 1px 1px 2px rgba(0, 0, 0, .4); }
+	ul{ margin: 0 10px; padding: 0}
+	li{ margin-top: 15px; border-bottom: 1px solid #ccc;
+		&:last-child{ border-bottom: 0}
+		ul{ margin: 0 0px 0 50px; border-top: 1px dashed #ccc;
+			img{ width: 36px; height: 36px; border-radius: 18px; }
+			.msg-box{ padding-left: 40px;}
+			li{ border-bottom-style: dashed; margin-top:10px;}
+		}
+		img{ float: left; width: 50px; height: 50px; border-radius: 25px;}
+		.msg-box{ padding-left: 60px;
+			p{ margin: 0; color: #777; word-wrap: break-word; font-size: .75rem;
+				&:first-child{ font-weight: 700;
+					a{ font-weight:500;}
+				}
+				&:nth-of-type(2){ padding: 2px 0 6px;}
+				i{ font-size: 12px; color: $green}
+				&:last-child{ height: 30px; padding-right: 25px;
+					a{ float: right; font-size: .75rem; color: $green; text-decoration:underline; text-shadow: 1px 1px 1px rgba(0, 0, 0, .1)}
+				}
+			}
+		}
+		&.no-data{ text-align: center; color: #ccc}
+	}
+}
+.reply-btn{ padding: 10px 20px;
+	.btn{ width: 100%; background:#fff; height: 2.5rem; line-height: 2.5rem; text-align: center; font-size: 1.125rem; color: $green; border-radius: 5px; text-shadow:none; font-weight: 700;}
+}

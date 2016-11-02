@@ -1,0 +1,25 @@
+$green: #37ac91;
+
+.main{ font-size: 0.75rem; padding-bottom: 30px / 16px * 1rem; 
+	h2{ height: 30px / 16px * 1rem;  line-height: 30px / 16px * 1rem; font-size: 1.0625rem; margin: 0;
+		a{ color: #000; white-space: nowrap; overflow: hidden; text-overflow: ellipsis}
+	}
+	aside{ font-size: 0.75rem; padding:2px 0; 
+		p{ margin: 0;}
+		em{ margin-right: 10px; color: #7a7a7a;}
+		a{ color: #fff; background: #cecece; line-height: 16px; display: inline-block; padding: 0px 5px; border-radius: 5px; }
+	}
+	section{ margin: 20px 15px 0; padding:10px; background: #fafafa; border: 1px solid #b9b9b9; border-radius: 5px; 
+		.desc{ color: #676767;
+			p{ line-height: 18px; text-shadow: 1px 1px 1px rgba(115, 211, 183, .3)}
+			.list-img{ text-align: center; display: block; max-height: 160px; overflow: hidden; margin: 10px 0 15px;
+				img{ width:100%;}
+			}
+		}
+		.link{ border-top: 2px solid #f5f5f5; margin-top: 15px;
+			a{ display: block; padding: 10px 0 0; font-size: 14px;
+				i{ float: right; font-size:14px; transform: rotate(180deg)}
+			}
+		}
+	}
+}

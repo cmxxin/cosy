@@ -1,0 +1,21 @@
+extends layout
+
+block content
+	article.main
+		each art in articleList
+			section
+				h2
+					a(href="/article/#{art._id}") #{art.title}
+				aside
+					p
+						em #{moment(art.meta.updateAt).format('YYYY-MM-DD')}
+						a(href="javascript:;") #{art.author.name}
+				.desc
+					if art.poster
+						a(href="/article/#{art._id}").list-img
+							img(src="#{art.poster}", alt="")
+					p
+						a(href="/article/#{art._id}") #{art.summary}
+				.link
+					a(href="/article/#{art._id}") 阅读全文
+						i.iconfont.icon-back

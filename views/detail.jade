@@ -1,0 +1,94 @@
+extends layout
+
+block content
+	article.main.m-detail
+		h2 #{itemInfo.title}
+		aside
+			p
+				em #{moment(itemInfo.meta.updateAt).format('YYYY-MM-DD')}
+				a(href="javascript:;") by #{itemInfo.author}
+			p
+				span
+					i.iconfont.icon-liuyan
+					| 4489
+				span
+					i.iconfont.icon-category
+					| #{itemInfo.category.name}
+				span
+					i.iconfont.icon-view
+					| #{itemInfo.pv}
+			p
+				span
+					i.iconfont.icon-biaoqian
+					b 
+						a(href="javascript:;") node.js 
+					b 
+						a(href="javascript:;") angularjs 
+					b 
+						a(href="javascript:;") gulp 
+					b 
+						a(href="javascript:;") nodemon 
+					b 
+						a(href="javascript:;") Jquery 
+		.content !{itemInfo.summary}
+	.reply
+		h4 Message
+		ul
+			if messageList.length
+				each item in messageList
+					li
+						if item.avatar
+							img(src="#{item.avatar}")
+						else 
+							img(src="/images/default.png")
+						.msg-box
+							p By 
+								a(href="javascript:;") #{item.name}
+							p #{item.message}
+							p 
+								i.iconfont.icon-time 
+								| on #{moment(item.meta.updateAt).format('YYYY-MM-DD')}
+								a.call-dialog.reply-to(href="javascript:;", data-id="#{item._id}") Reply
+						if item.reply.length
+							ul
+								each msg in item.reply
+									li
+										if msg.avatar
+											img(src="#{msg.avatar}")
+										else 
+											img(src="/images/default.png")
+										.msg-box
+											p By 
+												a(href="javascript:;") #{msg.name}
+											p #{msg.message}
+											p 
+												i.iconfont.icon-time 
+												| on #{moment(msg.meta.updateAt).format('YYYY-MM-DD')}
+			else
+				li.no-data
+					p 恭喜，你是第一个发现该文章的...
+	.reply-btn
+		a.btn.call-dialog.new-reply(href="javascript:;") 我要留言
+	.overlay
+	article.dialog
+		.thead
+			h4 Reply
+		.tbody
+			ul
+				li
+					input(type='text', id="username", placeholder='请输入姓名')
+				li
+					input(type='email', id="email", placeholder='Email')
+				li
+					input(type='text', id="siteUrl", placeholder='站点Url')
+				li
+					textarea(rows='5', id="message", placeholder="说点什么")
+		.tfoot.alignRight
+			a.btn.white.close-dialog(href="javascript:;") 取消
+			a.btn.green.btn-submit(href="javascript:;", data-artId="#{itemInfo._id}") 回复
+	aside.fixed-bar.hide
+		a(href="javascript:;")
+			i.iconfont.icon-top
+
+block footerJs
+	script(src="/scripts/detail.js")

@@ -1,0 +1,53 @@
+extends layout
+
+block content
+	header
+		a.btn.goBack(href="javascript:;")
+			i.iconfont.icon-back
+		.search-bar
+			input(type="text", value="#{ keyword }", id="keyword")
+			input(type="hidden", value="#{category}", id="category")
+			i.iconfont.icon-search
+		a.btn.search-btn(href="javascript:;") Go
+	nav.filter
+		ul
+			li
+				a.single.by-category(href="javascript:;") 
+					span 分类
+					i
+			li
+				a.time(href="javascript:;", data-type='time') 时间
+					i
+			li
+				a.msg(href="javascript:;", data-type="msg") 留言
+					i
+			li
+				a.pv(href="javascript:;", data-type="pv") 热度
+					i
+		.category
+			dl
+				dd
+					a(href="javascript:;") All
+				each item in catList
+					dd
+						a(href="javascript:;") #{ item.name }
+	article.article-list
+		dl
+			each item in articleList
+				dd
+					a.article-link(href="/article/#{item._id}")
+						if item.avatar
+							img(src="#{item.avatar}", alt="")
+						else
+							img(src="/images/default.png", alt="")
+						p #{item.title}
+						small #{item.summary}
+					.ext-opt
+						a.edit-btn(href="/admin/article/edit/#{item._id}") 修改
+						a.del-btn(href="/admin/article/del/#{item._id}") 删除
+	aside.add-article
+		a(href="/admin/article/new") 
+			i.iconfont.icon-new
+			|撰写新文章
+block scripts
+	script(src='/scripts/admin/list.js')
